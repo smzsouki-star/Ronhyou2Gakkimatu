@@ -6,7 +6,7 @@
     <title>論表 教科書 ミニクイズ</title>
 <style>
     /* -------------------------------------- */
-    /* CSS: スタイル設定 (豪華クリスマスデザイン & スマホ対応) */
+    /* CSS: スペース効率化 & スマホ最適化 (豪華クリスマス) */
     /* -------------------------------------- */
     
     :root {
@@ -15,218 +15,173 @@
         --deep-green: #006400;
         --gold-accent: #FFD700;
         --white-text: #FFFFFF;
-        --light-red-accent: #FF5555;
     }
 
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background-color: var(--deep-green);
         color: var(--white-text);
-        line-height: 1.6;
-        padding: 15px; /* スマホ向けに外側の余白を減らす */
+        line-height: 1.5;
+        padding: 10px; 
         margin: 0;
     }
 
     .container {
-        max-width: 1000px;
+        max-width: 900px;
         margin: 0 auto;
         background-color: var(--christmas-green);
-        padding: 20px; /* スマホ向けパディング */
-        border-radius: 15px;
+        padding: 15px; 
+        border-radius: 12px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         box-sizing: border-box;
-    }
-
-    /* タブレット・PC向けパディング調整 */
-    @media (min-width: 768px) {
-        .container {
-            padding: 40px 60px;
-        }
     }
 
     h1 {
         color: var(--gold-accent);
         text-align: center;
-        margin-bottom: 30px;
-        font-size: 1.8em; /* スマホ向けサイズ */
-        font-weight: 700;
+        margin: 10px 0 20px 0;
+        font-size: 1.6em;
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     }
 
-    @media (min-width: 768px) {
-        h1 { font-size: 3.0em; }
-    }
-
-    h2 {
-        color: var(--gold-accent); /* 赤からゴールドに変更して読みやすく */
-        margin-top: 30px;
-        padding-bottom: 8px;
-        border-bottom: 3px solid var(--christmas-red);
-        font-size: 1.3em;
-    }
-
-    @media (min-width: 768px) {
-        h2 { font-size: 2.0em; }
-    }
-
-    /* テスト選択ボタン */
+    /* テスト選択ボタンを2列のタイル状に変更 (スマホでも2列) */
     .test-selection {
-        display: flex;
-        flex-direction: column; /* スマホでは縦並び */
-        gap: 12px;
-        margin-bottom: 40px;
-    }
-
-    @media (min-width: 768px) {
-        .test-selection {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 8px;
+        margin-bottom: 25px;
     }
 
     .test-selection button {
-        padding: 15px;
+        padding: 12px 5px;
         background-color: var(--christmas-red);
         color: var(--white-text);
         border: 2px solid var(--gold-accent);
-        border-radius: 10px;
-        font-size: 1.1em;
+        border-radius: 8px;
+        font-size: 0.85em; /* 文字を少し小さくして収める */
         font-weight: 600;
         cursor: pointer;
         transition: all 0.2s ease;
     }
 
-    .test-selection button:hover {
-        background-color: #8c0000;
-    }
-    
     .active-test-button {
         background-color: var(--gold-accent) !important;
         color: #333 !important;
-        border-color: #FFA500 !important;
-    }
-    
-    /* クイズカード */
-    .question-card {
-        background-color: #105a10;
-        border: 1px solid #1a7e1a;
-        border-left: 6px solid var(--christmas-red);
-        padding: 20px;
-        margin-bottom: 25px;
-        border-radius: 8px;
-        color: var(--white-text);
-        box-sizing: border-box;
     }
 
-    .question-card p.context-text {
-        font-size: 1.0em;
-        color: #ffd;
-        border-bottom: 1px dashed #777;
-        margin-bottom: 10px;
-        padding-bottom: 5px;
-    }
-
-    .question-card p.question-text {
-        font-size: 1.1em;
-        font-weight: bold;
-    }
-
-    /* 選択肢のレイアウト修正 */
-    #quiz-list {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .choice-label {
-        display: flex; /* 横並びレイアウトを保証 */
-        align-items: center;
-        padding: 12px 15px;
-        background-color: #053805;
-        border: 1px solid #1a7e1a;
-        border-radius: 8px;
-        font-size: 1.0em;
-        color: var(--white-text);
-        cursor: pointer;
-        transition: 0.2s;
-        word-break: break-word; /* 長い英文の折り返しを保証 */
-    }
-
-    .choice-label:hover {
-        background-color: var(--christmas-red);
-    }
-
-    .choice-label input[type="radio"] {
-        margin-right: 12px;
-        transform: scale(1.3);
-        accent-color: var(--gold-accent);
-        flex-shrink: 0; /* ラジオボタンが縮まないように固定 */
-    }
-
-    /* 採点ボタン */
-    #submit-button {
-        width: 100%;
-        padding: 20px;
-        background-color: var(--gold-accent);
-        color: #333;
-        border: none;
-        border-radius: 10px;
-        font-size: 1.3em;
-        font-weight: bold;
-        cursor: pointer;
-        margin-top: 20px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
-
-    /* 結果表示 */
-    #result-area {
-        margin-top: 40px;
-        padding: 20px;
-        background-color: #105a10;
-        border: 2px solid var(--gold-accent);
-        border-radius: 12px;
-        text-align: center;
-    }
-
-    #score {
-        font-size: 2.5em;
-        color: var(--gold-accent);
-    }
-
-    .explanation-text {
-        margin-top: 15px;
-        padding: 12px;
-        background-color: #8c0000;
-        border-radius: 6px;
-        font-size: 0.95em;
-        color: var(--white-text);
-        border-left: 5px solid var(--gold-accent);
-    }
-
+    /* 本文表示エリアをコンパクトに (最大高さを設定しスクロール) */
     .passage-box {
         border: 2px solid var(--gold-accent);
         background-color: #105a10;
-        padding: 15px;
-        margin-bottom: 25px;
+        padding: 12px;
+        margin-bottom: 20px;
         border-radius: 10px;
+        max-height: 200px; /* 縦長防止: スクロール可能に */
+        overflow-y: auto;
     }
 
     .passage-title {
         color: var(--gold-accent);
         font-weight: bold;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
+        font-size: 0.9em;
     }
 
     .passage-text {
+        font-size: 1.0em;
+        line-height: 1.6;
+    }
+
+    /* クイズカードの余白を削減 */
+    .question-card {
+        background-color: #105a10;
+        border-left: 4px solid var(--christmas-red);
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 6px;
+    }
+
+    .question-card p.context-text {
+        font-size: 0.85em;
+        color: #ffd;
+        margin: 0 0 8px 0;
+    }
+
+    .question-card p.question-text {
         font-size: 1.05em;
-        line-height: 1.8;
+        font-weight: bold;
+        margin: 0 0 12px 0;
+    }
+
+    /* 選択肢をコンパクトな配置に (並び替え以外は横並び検討もありだが縦でタイトに) */
+    .choice-label {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        margin: 6px 0;
+        background-color: #053805;
+        border: 1px solid #1a7e1a;
+        border-radius: 6px;
+        font-size: 0.95em;
+        word-break: break-word;
+    }
+
+    .choice-label input[type="radio"] {
+        margin-right: 10px;
+        transform: scale(1.1);
+        flex-shrink: 0;
+    }
+
+    /* 採点ボタン */
+    #submit-button {
+        width: 100%;
+        padding: 15px;
+        background-color: var(--gold-accent);
+        color: #333;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    #result-area {
+        margin-top: 25px;
+        padding: 15px;
+        background-color: #105a10;
+        border: 2px solid var(--gold-accent);
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    #score {
+        font-size: 2.0em;
+        color: var(--gold-accent);
+    }
+
+    .explanation-text {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #8c0000;
+        border-radius: 6px;
+        font-size: 0.9em;
+        border-left: 4px solid var(--gold-accent);
     }
 
     .blank-spot {
         font-weight: bold;
         color: var(--gold-accent);
-        border-bottom: 2px dashed var(--gold-accent);
+    }
+
+    /* PC向けの調整 */
+    @media (min-width: 768px) {
+        body { padding: 30px; }
+        .container { padding: 30px; }
+        h1 { font-size: 2.5em; }
+        .test-selection { grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        .test-selection button { font-size: 1.1em; padding: 18px; }
+        .passage-box { max-height: none; } /* PCでは全部表示 */
+        .question-card { padding: 25px; }
     }
 </style>
 </head>
@@ -236,17 +191,17 @@
         <h1 id="top">📚 論表 ミニクイズ</h1>
 
         <div class="test-selection">
-            <button id="btn-L10Vocab" onclick="startQuiz('L10Vocab', 'btn-L10Vocab')">L10 - 語彙クイズ</button>
-            <button id="btn-L10Grammar" onclick="startQuiz('L10Grammar', 'btn-L10Grammar')">L10 - 文法クイズ</button>
-            <button id="btn-L10Comprehension" onclick="startQuiz('L10Comprehension', 'btn-L10Comprehension')">L10 - 総合クイズ</button>
+            <button id="btn-L10Vocab" onclick="startQuiz('L10Vocab', 'btn-L10Vocab')">L10 語彙</button>
+            <button id="btn-L10Grammar" onclick="startQuiz('L10Grammar', 'btn-L10Grammar')">L10 文法</button>
+            <button id="btn-L10Comprehension" onclick="startQuiz('L10Comprehension', 'btn-L10Comprehension')">L10 総合</button>
             
-            <button id="btn-L11Vocab" onclick="startQuiz('L11Vocab', 'btn-L11Vocab')">L11 - 語彙クイズ</button>
-            <button id="btn-L11Grammar" onclick="startQuiz('L11Grammar', 'btn-L11Grammar')">L11 - 文法クイズ</button>
-            <button id="btn-L11Comprehension" onclick="startQuiz('L11Comprehension', 'btn-L11Comprehension')">L11 - 総合クイズ</button>
+            <button id="btn-L11Vocab" onclick="startQuiz('L11Vocab', 'btn-L11Vocab')">L11 語彙</button>
+            <button id="btn-L11Grammar" onclick="startQuiz('L11Grammar', 'btn-L11Grammar')">L11 文法</button>
+            <button id="btn-L11Comprehension" onclick="startQuiz('L11Comprehension', 'btn-L11Comprehension')">L11 総合</button>
             
-            <button id="btn-L12Vocab" onclick="startQuiz('L12Vocab', 'btn-L12Vocab')">L12 - 語彙クイズ</button>
-            <button id="btn-L12Grammar" onclick="startQuiz('L12Grammar', 'btn-L12Grammar')">L12 - 文法クイズ</button>
-            <button id="btn-L12Comprehension" onclick="startQuiz('L12Comprehension', 'btn-L12Comprehension')">L12 - 総合クイズ</button>
+            <button id="btn-L12Vocab" onclick="startQuiz('L12Vocab', 'btn-L12Vocab')">L12 語彙</button>
+            <button id="btn-L12Grammar" onclick="startQuiz('L12Grammar', 'btn-L12Grammar')">L12 文法</button>
+            <button id="btn-L12Comprehension" onclick="startQuiz('L12Comprehension', 'btn-L12Comprehension')">L12 総合</button>
         </div>
 
         <div id="quiz-area-anchor"></div> 
