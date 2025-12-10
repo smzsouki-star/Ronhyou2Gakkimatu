@@ -6,7 +6,7 @@
     <title>論表 教科書 ミニクイズ</title>
 <style>
     /* -------------------------------------- */
-    /* CSS: 横幅最大化 & 豪華クリスマスデザイン */
+    /* CSS: 横幅最大化 & 豪華クリスマスデザイン V3 */
     /* -------------------------------------- */
     
     :root {
@@ -22,16 +22,18 @@
         background-color: var(--deep-green);
         color: var(--white-text);
         line-height: 1.5;
-        padding: 5px 0; /* スマホの外側余白をほぼゼロに */
+        padding: 5px; /* 画面外枠の余白を確保しつつ最小限に */
         margin: 0;
+        box-sizing: border-box;
     }
 
     .container {
-        max-width: 1000px;
+        width: 100%; /* 横幅を100%に */
+        max-width: 1200px; /* PCでも広めに設定 */
         margin: 0 auto;
         background-color: var(--christmas-green);
-        padding: 10px; /* 内側の余白を最小限に */
-        border-radius: 8px; /* 角を少し鋭くして画面占有感を出す */
+        padding: 10px; 
+        border-radius: 8px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         box-sizing: border-box;
     }
@@ -44,7 +46,7 @@
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     }
 
-    /* テスト選択ボタン 2列配置を維持しつつ横幅を広げる */
+    /* テスト選択ボタン 2列配置 */
     .test-selection {
         display: grid;
         grid-template-columns: repeat(2, 1fr); 
@@ -53,12 +55,12 @@
     }
 
     .test-selection button {
-        padding: 10px 4px;
+        padding: 8px 3px; /* ボタンの縦幅を少し削減 */
         background-color: var(--christmas-red);
         color: var(--white-text);
         border: 2px solid var(--gold-accent);
         border-radius: 6px;
-        font-size: 0.85em;
+        font-size: 0.8em; /* 文字をさらに小さくして、長いテキストを収める */
         font-weight: 600;
         cursor: pointer;
     }
@@ -68,14 +70,14 @@
         color: #333 !important;
     }
 
-    /* 本文表示エリアを横に広く */
+    /* 本文表示エリア (長文の縦長化防止) */
     .passage-box {
         border: 2px solid var(--gold-accent);
         background-color: #105a10;
         padding: 10px;
         margin-bottom: 15px;
         border-radius: 6px;
-        max-height: 180px; 
+        max-height: 200px; /* 高さを確保しつつ、スクロール可能に */
         overflow-y: auto;
     }
 
@@ -88,18 +90,16 @@
 
     .passage-text {
         font-size: 0.95em;
-        line-height: 1.5;
+        line-height: 1.4; /* 行間を少し詰めて縦幅を削減 */
     }
 
-    /* 問題カードを横いっぱいに活用 */
+    /* 問題カード */
     .question-card {
         background-color: #105a10;
         border-left: 4px solid var(--christmas-red);
         padding: 12px;
         margin-bottom: 12px;
         border-radius: 4px;
-        width: 100%;
-        box-sizing: border-box;
     }
 
     .question-card p.context-text {
@@ -114,23 +114,26 @@
         margin: 0 0 10px 0;
     }
 
-    /* 選択肢を横幅いっぱい、かつ読みやすく */
+    /* 選択肢の文字枠を最大化 */
     .choice-label {
         display: flex;
-        align-items: center;
+        align-items: flex-start; /* 上端揃えに変更 */
         padding: 8px 10px;
         margin: 4px 0;
         background-color: #053805;
         border: 1px solid #1a7e1a;
         border-radius: 4px;
         font-size: 0.9em;
-        word-break: break-all; /* 単語の途中で改行して横幅を守る */
+        /* 横幅をフルに使うための設定 */
+        overflow-wrap: break-word; /* 単語の途中で改行せず、単語単位で折り返す */
+        word-wrap: break-word; /* 互換性のため */
     }
 
     .choice-label input[type="radio"] {
         margin-right: 8px;
         transform: scale(1.1);
         flex-shrink: 0;
+        margin-top: 3px; /* テキストの上端に揃える微調整 */
     }
 
     #submit-button {
@@ -154,7 +157,7 @@
         text-align: center;
     }
 
-    /* PC向けの調整：大画面では横幅を制限して読みやすさを確保 */
+    /* PC向けの調整 */
     @media (min-width: 768px) {
         body { padding: 30px 10px; }
         .container { padding: 30px; border-radius: 20px; }
