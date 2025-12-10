@@ -6,7 +6,7 @@
     <title>論表 教科書 ミニクイズ</title>
 <style>
     /* -------------------------------------- */
-    /* CSS: スマホ最適化 V5 - 強制的な縦幅削減と横幅確保 */
+    /* CSS: 横幅最大化 V6 - 有効表示領域を優先 */
     /* -------------------------------------- */
     
     :root {
@@ -17,7 +17,7 @@
         --white-text: #FFFFFF;
     }
 
-    /* 完全に外側の余白をゼロにし、横幅を最大化 */
+    /* 1. フレームの最大化: 画面の左右余白をゼロに */
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background-color: var(--deep-green);
@@ -32,7 +32,7 @@
         width: 100%;
         margin: 0 auto;
         background-color: var(--christmas-green);
-        padding: 5px; /* 内側余白を最小限に */
+        padding: 5px; /* 内側余白を最小限に抑え、有効表示幅を最大化 */
         border-radius: 0; 
         box-shadow: none; 
         box-sizing: border-box;
@@ -50,17 +50,17 @@
     .test-selection {
         display: grid;
         grid-template-columns: repeat(2, 1fr); 
-        gap: 4px; /* ギャップを極限まで詰める */
+        gap: 4px; 
         margin-bottom: 10px;
     }
 
     .test-selection button {
-        padding: 6px 3px; /* ボタンの縦幅を極限まで削減 */
+        padding: 6px 3px; 
         background-color: var(--christmas-red);
         color: var(--white-text);
         border: 1px solid var(--gold-accent);
         border-radius: 4px;
-        font-size: 0.7em; /* 文字を最も小さくし、ボタンが横に広がるのを助ける */
+        font-size: 0.7em; 
         font-weight: 600;
     }
 
@@ -69,14 +69,14 @@
         color: #333 !important;
     }
 
-    /* 長文表示エリア - 高さを固定し縦長化を防止 */
+    /* 長文表示エリア */
     .passage-box {
         border: 1px solid var(--gold-accent);
         background-color: #105a10;
-        padding: 6px; 
+        padding: 5px; /* 内側パディングを最小限に */
         margin-bottom: 10px;
         border-radius: 4px;
-        max-height: 120px; /* ★高さをさらに低く固定★ */
+        max-height: 120px; 
         overflow-y: auto;
     }
 
@@ -89,14 +89,14 @@
 
     .passage-text {
         font-size: 0.9em;
-        line-height: 1.2; /* ★行間を最小限に詰める★ */
+        line-height: 1.2; 
     }
 
     /* 問題カード */
     .question-card {
         background-color: #105a10;
         border-left: 3px solid var(--christmas-red);
-        padding: 8px; /* カード内の余白を詰める */
+        padding: 8px; /* カード内の余白を最小限に */
         margin-bottom: 8px;
         border-radius: 4px;
     }
@@ -113,7 +113,7 @@
         margin: 0 0 6px 0;
     }
 
-    /* 選択肢の文字枠を最大化＆改行制御 */
+    /* 2. 選択肢の有効表示幅を最大化＆ 3. 強制改行 */
     .choice-label {
         display: flex;
         align-items: flex-start;
@@ -122,17 +122,17 @@
         background-color: #053805;
         border: 1px solid #1a7e1a;
         border-radius: 4px;
-        font-size: 0.8em; /* 選択肢の文字を小さく */
+        font-size: 0.85em; /* 文字を小さくし、横に広がりやすく */
         line-height: 1.2;
         
-        /* 横幅をフルに使うための強制的な改行 */
-        word-break: break-all; 
+        /* 改行を減らすための最優先設定 */
+        word-break: break-all; /* ★文字単位で折り返し、横幅をフル活用★ */
         overflow-wrap: break-word; 
     }
 
     .choice-label input[type="radio"] {
         margin-right: 5px;
-        transform: scale(0.9); /* ラジオボタンも小さく */
+        transform: scale(0.9);
         flex-shrink: 0;
         margin-top: 2px;
     }
@@ -164,6 +164,7 @@
         .test-selection button { font-size: 1.1em; padding: 18px; }
         .passage-box { max-height: none; } 
         .question-card { padding: 25px; border-radius: 10px; }
+        /* PCでは単語途中改行を無効化し、自然な改行に戻す */
         .choice-label { font-size: 1.0em; word-break: normal; }
     }
 </style>
