@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>論表 教科書 ミニクイズ</title>
+<style>
+    /* -------------------------------------- */
+    /* CSS: スタイル設定 (豪華クリスマスデザイン) */
+    /* -------------------------------------- */
+    
+    /* クリスマスカラーの定義 */
+    :root {
+        --christmas-red: #C00000; /* 深い赤 (豪華なアクセント) */
+        --christmas-green: #004D00; /* 濃い緑 (カード/コンテナの背景) */
+        --deep-green: #006400; /* さらに深い緑 (全体の背景) */
+        --gold-accent: #FFD700; /* ゴールド (文字/スコア) */
+        --white-text: #FFFFFF;
+        --light-red-accent: #FF5555; /* 明るい赤 (ホバー) */
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--deep-green); /* 背景を濃い緑に */
+        color: var(--white-text); /* 基本の文字色を白に */
+        line-height: 1.7; 
+        padding: 30px; 
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background-color: var(--christmas-green); /* コンテナの背景を一段階濃い緑に */
+        padding: 50px 60px; 
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); /* 影を強調 */
+    }
+
+    h1 {
+        color: var(--gold-accent); /* メインの見出しをゴールドに */
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 3.0em; 
+        font-weight: 700;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    h2 {
+        color: var(--christmas-red); /* セクションの見出しを赤に */
+        margin-top: 40px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid var(--christmas-red);
+        font-size: 2.0em; 
+    }
+
+    /* テスト選択ボタン */
+    .test-selection {
+        gap: 20px;
+        margin-bottom: 50px;
+    }
+
+    .test-selection button {
+        padding: 22px; 
+        background-color: var(--christmas-red); /* ボタンの背景を赤に */
+        color: var(--white-text); /* 文字を白に */
+        border: 3px solid var(--light-red-accent);
+        border-radius: 12px;
+        font-size: 1.2em; 
+        font-weight: 600;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .test-selection button:hover {
+        background-color: #8c0000; /* ホバーでさらに濃い赤 */
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* アクティブ（選択中）のボタンのスタイル */
+    .active-test-button {
+        background-color: var(--gold-accent) !important; /* 選択中はゴールドに */
+        color: #333 !important; /* 文字を濃色にして見やすく */
+        border-color: #FFA500 !important;
+        transform: translateY(-2px);
+    }
+    
+    /* クイズエリア */
+    .question-card {
+        background-color: #105a10; /* カードの背景を濃い緑に */
+        border: 1px solid #333;
+        border-left: 6px solid var(--christmas-red); /* アクセントラインを赤に */
+        padding: 35px;
+        color: var(--white-text);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .question-card p.context-text {
+        font-size: 1.15em; 
+        color: #ddd; /* 薄いグレーで見やすく */
+        border-bottom: 1px dashed #777;
+    }
+
+    .question-card p.question-text {
+        font-size: 1.35em; 
+        color: var(--white-text);
+    }
+
+    /* 選択肢のスタイル */
+    .choice-label {
+        padding: 18px; 
+        background-color: #053805; /* 選択肢の背景をさらに濃い緑に */
+        border: 1px solid #1a7e1a;
+        font-size: 1.2em; 
+        color: var(--white-text);
+    }
+
+    .choice-label:hover {
+        background-color: var(--christmas-red); /* ホバーで赤に */
+        border-color: var(--light-red-accent); 
+    }
+
+    .choice-label input[type="radio"] {
+        transform: scale(1.5);
+        accent-color: var(--gold-accent); /* ラジオボタンの色をゴールドに */
+    }
+
+    /* 採点ボタン */
+    #submit-button {
+        padding: 25px; 
+        background-color: var(--gold-accent); /* ゴールド */
+        color: #333; /* 文字を濃色にして見やすく */
+        border-radius: 10px;
+        font-size: 1.5em; 
+        box-shadow: 0 8px 15px rgba(255, 215, 0, 0.4);
+    }
+
+    #submit-button:hover {
+        background-color: #ccaa00;
+    }
+
+    /* 結果表示エリア */
+    #result-area {
+        margin-top: 50px;
+        padding: 40px;
+        background-color: #105a10; /* カードと同じ濃い緑の背景 */
+        border: 2px solid var(--gold-accent); /* ボーダーをゴールドに */
+    }
+
+    #score {
+        font-size: 4.0em; 
+        color: var(--christmas-red); /* スコアを赤に */
+    }
+
+    /* 正誤フィードバック */
+    .feedback {
+        font-weight: bold;
+        padding: 12px 0;
+        font-size: 1.2em;
+        border-top: 1px dashed #777;
+    }
+
+    .correct {
+        color: var(--gold-accent); /* 正解をゴールドに */
+    }
+
+    .incorrect {
+        color: var(--christmas-red); /* 不正解を赤に */
+    }
+
+    /* 解説表示用のスタイル */
+    .explanation-text {
+        margin-top: 20px;
+        padding: 15px 20px;
+        background-color: #8c0000; /* 濃い赤の背景 */
+        border-radius: 8px;
+        font-size: 1.05em; 
+        color: var(--white-text); /* 文字を白に */
+        border-left: 5px solid var(--gold-accent); /* ボーダーをゴールドに */
+    }
+
+    /* やり直しボタン */
+    #retry-button {
+        padding: 18px 35px;
+        background-color: var(--christmas-red); /* 赤 */
+        color: var(--white-text);
+        font-weight: 700;
+        box-shadow: 0 4px 8px rgba(192, 0, 0, 0.4);
+    }
+
+    #retry-button:hover {
+        background-color: #8c0000;
+    }
+    
+    /* 本文表示エリア */
+    .passage-box {
+        border: 2px solid var(--gold-accent); /* ボーダーをゴールドに */
+        background-color: #105a10; /* 濃い緑の背景 */
+        padding: 30px;
+        color: var(--white-text);
+    }
+
+    .passage-title {
+        color: var(--gold-accent); /* タイトルをゴールドに */
+        border-bottom: 2px solid var(--christmas-red);
+    }
+
+    .passage-text {
+        font-size: 1.25em; 
+        color: var(--white-text);
+    }
+
+    /* 空欄を示す部分 */
+    .blank-spot {
+        font-weight: bold;
+        color: var(--christmas-red); /* 赤で強調 */
+        border-bottom: 3px dashed var(--christmas-red);
+    }
+    /* -------------------------------------- */
+/* CSS: 選択肢のレイアウト修正 */
+/* -------------------------------------- */
+
+/* 選択肢の親要素（.choices）を修正 */
+/* ラジオボタンとラベルを横並びではなく、縦のブロック要素として確保 */
+.choices {
+    display: flex; /* Flexコンテナは維持 */
+    flex-direction: column; /* 要素を縦方向に並べる */
+    gap: 10px; /* 選択肢間の間隔を確保 */
+}
+
+/* 選択肢のラベル (choice-label) を修正 */
+.choice-label {
+    /* 以前の .choice-label のスタイルは維持しつつ、以下のプロパティを追加/修正 */
+    display: block; /* ブロック要素として確保し、幅全体を使用 */
+    width: 100%; /* 親要素の幅いっぱいを使う */
+    padding: 15px 18px; /* パディングを調整して見やすく */
+    
+    /* テキストの折り返しを許可 */
+    white-space: normal; 
+    
+    /* 以前のスタイル (クリスマスカラー) を再確認 */
+    background-color: #053805; 
+    border: 1px solid #1a7e1a;
+    font-size: 1.2em; 
+    color: var(--white-text);
+}
+
+/* ラジオボタンとテキストを横並びにするための内部調整 */
+.choice-label input[type="radio"] {
+    margin-right: 15px; /* ラジオボタンとテキストの間にスペースを確保 */
+    /* ラジオボタンのサイズはそのまま */
+}
+
+/* 念のため、並び替え問題の質問文を強調し、見やすくする */
+.question-card p.context-text {
+    font-size: 1.2em;
+    color: var(--gold-accent);
+}
+</style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="top">📚 論表 教科書 ミニクイズ</h1>
+
+        <div class="test-selection">
+            <button id="btn-L10Vocab" onclick="startQuiz('L10Vocab', 'btn-L10Vocab')">LESSON 10 - 語彙クイズ</button>
+            <button id="btn-L10Grammar" onclick="startQuiz('L10Grammar', 'btn-L10Grammar')">LESSON 10 - 文法クイズ</button>
+            <button id="btn-L10Comprehension" onclick="startQuiz('L10Comprehension', 'btn-L10Comprehension')">LESSON 10 - 総合クイズ</button>
+            
+            <button id="btn-L11Vocab" onclick="startQuiz('L11Vocab', 'btn-L11Vocab')">LESSON 11 - 語彙クイズ</button>
+            <button id="btn-L11Grammar" onclick="startQuiz('L11Grammar', 'btn-L11Grammar')">LESSON 11 - 文法クイズ</button>
+            <button id="btn-L11Comprehension" onclick="startQuiz('L11Comprehension', 'btn-L11Comprehension')">LESSON 11 - 総合クイズ</button>
+            
+            <button id="btn-L12Vocab" onclick="startQuiz('L12Vocab', 'btn-L12Vocab')">LESSON 12 - 語彙クイズ</button>
+            <button id="btn-L12Grammar" onclick="startQuiz('L12Grammar', 'btn-L12Grammar')">LESSON 12 - 文法クイズ</button>
+            <button id="btn-L12Comprehension" onclick="startQuiz('L12Comprehension', 'btn-L12Comprehension')">LESSON 12 - 総合クイズ</button>
+        </div>
+
+        <div id="quiz-area-anchor"></div> <div id="quiz-area">
+            </div>
+
+        <button id="submit-button" onclick="submitQuiz()">採点する</button>
+
+        <div id="result-area">
+            </div>
+    </div>
+
+    <script src="quiz_logic.js"></script>
+</body>
+</html>

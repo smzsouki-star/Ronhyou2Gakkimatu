@@ -1,0 +1,151 @@
+{
+    "L10Vocab": [
+        {"q": "go sightseeing in...", "choices": ["･･･に観光に行く", "･･･を案内する", "･･･を調査する"], "a": "･･･に観光に行く", "explanation": "sightseeingは「観光」という意味の不可算名詞。"},
+        {"q": "be unique to Japan", "choices": ["日本独特である", "日本に人気がある", "日本の歴史である"], "a": "日本独特である", "explanation": "unique to A で「Aに独特の、A固有の」という意味。unique（唯一の）は比較級・最上級を持たない。"},
+        {"q": "a national treasure", "choices": ["国宝", "国のシンボル", "地域の宝"], "a": "国宝", "explanation": "national（国の）と treasure（宝物）の組み合わせ。"},
+        {"q": "a hot spring", "choices": ["温泉", "湧き水", "地下水"], "a": "温泉", "explanation": "hot springは「熱い泉」から「温泉」を意味する。"},
+        {"q": "Zen meditation", "choices": ["座禅", "茶道", "華道"], "a": "座禅", "explanation": "meditation（瞑想）に禅宗の Zen を冠したもの。"},
+        {"q": "a vending machine", "choices": ["自動販売機", "遠隔操作機器", "ロボット"], "a": "自動販売機", "explanation": "vending machineは「販売機」という意味。"},
+        {"q": "indigo dyeing", "choices": ["藍染め", "陶芸", "書道"], "a": "藍染め", "explanation": "indigo（藍）と dyeing（染めること）の組み合わせ。"},
+        {"q": "a conveyor belt sushi restaurant", "choices": ["回転ずし店", "高級すし店", "屋台のすし店"], "a": "回転ずし店", "explanation": "conveyor belt（ベルトコンベア）で寿司が運ばれる店。"},
+        {"q": "go cherry blossom viewing", "choices": ["花見に行く", "紅葉を見に行く", "城を訪れる"], "a": "花見に行く", "explanation": "cherry blossom viewingで「花見」。autumn leaf viewingは「紅葉狩り」。"},
+        {"q": "pottery", "choices": ["陶芸", "華道", "書道"], "a": "陶芸", "explanation": "陶器や陶芸一般を指す単語。"}]
+    ,
+    "L10Grammar": [
+        {"q": "The area of Japan is almost ( ) large ( ) that of Germany.", "choices": ["as / as", "more / than", "the most / of"], "a": "as / as", "explanation": "原級比較「as...as（〜と同じくらい）」の構文。almostは「ほとんど」という意味。"},
+        {"q": "The number of tourists is ( ) as large as that of 10 years ago.", "choices": ["twice", "the most", "much"], "a": "twice", "explanation": "倍数表現「twice as...as（2倍の〜）」の構文。"},
+        {"q": "Furoshiki are ( ) more eco-friendly than plastic bags.", "choices": ["much", "good", "one of"], "a": "much", "explanation": "比較級 more を強調するには、much, far, a lot などを使う。「ずっと〜」という意味になる。"},
+        {"q": "The most popular dish ( ) this restaurant is tonkatsu.", "choices": ["in", "of", "than"], "a": "in", "explanation": "最上級の範囲を示す in（場所、集団）または of（種類、期間）から選択。この場合は「レストランの中で」なので in。"},
+        {"q": "Washoku is ( ) of the healthiest foods in the world.", "choices": ["one", "the most", "a lot"], "a": "one", "explanation": "「one of the 最上級 + 複数名詞」で「最も〜なものの1つ」という表現。"},
+        {"q": "No other mountain in Japan is ( ) than Mt. Fuji.", "choices": ["higher", "high", "the highest"], "a": "higher", "explanation": "最上級の言い換え表現「No other + 単数名詞 + 比較級 + than（他のどの〜よりも...だ）」の形。"}
+    ],
+    "L10Comprehension": [
+        {
+            "text": "Every year, more and more people visit Japan from abroad and spend their money. The graph shows the average spending of tourists from Asian or Western countries in five different categories while in Japan. As you can see, Western people spend [A] money than Asian people on all categories except shopping. Both Western and Asian tourists spend the [B] money on accommodations such as hotels. However, it is notable that the amount Asian people spend on shopping is almost as much as they spend on their accommodations. Entertainment/service is another interesting category where Western visitors spend about [C] as much money as Asian visitors.",
+            "questions": [
+                {"context": "空欄Aに入る適切な比較表現を選びなさい。", "q": "空欄 [A] に入る単語は？", "answer_key": "more", "choices": ["more", "less", "as much"], "explanation": "欧米人は買い物以外でアジア人より多く支出しているため、more money than の形が適切。"},
+                {"context": "空欄Bに入る適切な最上級表現を選びなさい。", "q": "空欄 [B] に入る単語は？", "answer_key": "most", "choices": ["most", "more", "best"], "explanation": "「最も多くお金を使う」という最上級表現は spend the most money on... となる。"},
+                {"context": "空欄Cに入る適切な倍数表現を選びなさい。", "q": "空欄 [C] に入る単語は？", "answer_key": "twice", "choices": ["twice", "half", "the most"], "explanation": "本文の表現「spend about twice as much money as...（約2倍のお金を使う）」より。"},
+                {"context": "文法重要事項: ( ) に下の語句を正しく並べ替えて「日本で最も美しい山は富士山です」という文を完成させなさい。", "q": "Mt. Fuji is () mountain in Japan. [the / highest / beautiful / most / and]", "answer_key": "the most beautiful and highest", "choices": ["the most beautiful and highest", "the highest and most beautiful", "most beautiful and highest the", "the beautiful and most highest"], "explanation": "最上級表現。「the most beautiful and highest mountain」の形。the most beautifulとthe highestの2つの最上級がandでつながれている。"},
+                {"context": "並び替え問題: ( ) に下の語句を正しく並べ替えて「他のどの山も富士山より高くない」という文を完成させなさい。 No other mountain in Japan ( ) Mt. Fuji.", "q": "No other mountain in Japan ( ) Mt. Fuji. [than / is / higher]", "answer_key": "is higher than", "choices": ["is higher than", "higher than is", "than is higher", "is than higher"], "explanation": "最上級の言い換え（比較級）：No other + 単数名詞 + 比較級 + than の形。正解: is higher than"}
+            ]
+        },
+        {
+            "text": "The amount Asian people spend on shopping is almost [A] as they spend on their accommodations. This suggests that Asian tourists value [B] as part of their travel experience. On the other hand, Western visitors spend a large amount on Entertainment/service, indicating a focus on [C] during their stay in Japan.",
+            "questions": [
+                {"context": "空欄Aに入る適切な比較表現を選びなさい。", "q": "空欄 [A] に入る単語は？", "answer_key": "as much", "choices": ["more", "less", "as much"], "explanation": "almost as much as... で「ほとんど同じくらい」という同等比較の表現。"},
+                {"context": "文脈から判断して、アジア人観光客が重視する要素は何か。", "q": "空欄 [B] に入る単語は？", "answer_key": "shopping", "choices": ["shopping", "service", "accommodations"], "explanation": "宿泊費とほぼ同じ額を買い物に費やしていることから、shopping が重視されていると推測される。"},
+                {"context": "文脈から判断して、欧米人観光客が重視する要素は何か。", "q": "空欄 [C] に入る単語は？", "answer_key": "entertainment", "choices": ["shopping", "entertainment", "food"], "explanation": "Entertainment/service に多額を費やしていることから、entertainment（娯楽）に重点を置いていると推測される。"},
+                {"context": "並び替え問題: ( ) に下の語句を正しく並べ替えて「この国では、野球はサッカーと同じくらい人気がある」という文を完成させなさい。 Baseball is ( ) soccer in this country.", "q": "Baseball is ( ) soccer in this country. [popular / as / as]", "answer_key": "as popular as", "choices": ["as popular as", "popular as as", "as as popular", "popular as"], "explanation": "原級比較の as...as の形。正解: as popular as"}
+            ]
+        },
+        {
+            "text": "As you can see, Western people spend more money than Asian people on all categories except shopping. Both Western and Asian tourists spend the most money on accommodations such as hotels. However, it is [A] that the amount Asian people spend on shopping is almost as much as they spend on their accommodations. Entertainment/service is another [B] category where Western visitors spend about twice as much money as Asian visitors. This analysis provides valuable insights for [C] businesses.",
+            "questions": [
+                {"context": "空欄Aに入る、筆者の注目点を示す形容詞を選びなさい。", "q": "空欄 [A] に入る単語は？", "answer_key": "notable", "choices": ["difficult", "notable", "clear"], "explanation": "It is notable that... で「〜は注目に値する」という表現。"},
+                {"context": "空欄Bに入る、関心を集めることを示す形容詞を選びなさい。", "q": "空欄 [B] に入る単語は？", "answer_key": "interesting", "choices": ["expensive", "boring", "interesting"], "explanation": "興味深いカテゴリー（interesting category）という文脈。"},
+                {"context": "この分析結果が特に役立つのは、どの分野のビジネスか。", "q": "空欄 [C] に入る単語は？", "answer_key": "tourism", "choices": ["tourism", "tech", "finance"], "explanation": "観光客の支出に関する分析なので、観光（tourism）ビジネスにとって有益である。"},
+                {"context": "並び替え問題: ( ) に下の語句を正しく並べ替えて「彼の最新の本は、前の本よりもずっとおもしろい」という文を完成させなさい。 His latest book is ( ) his previous one.", "q": "His latest book is ( ) his previous one. [more / much / interesting / than]", "answer_key": "much more interesting than", "choices": ["much more interesting than", "more much interesting than", "interesting much more than", "more interesting than much"], "explanation": "比較級の強調（much more...than）。正解: much more interesting than"}
+            ]
+        }
+    ],
+    "L11Vocab": [
+        {"q": "reform", "choices": ["･･･を改革する", "･･･を調査する", "･･･を評価する"], "a": "･･･を改革する", "explanation": "reform は「（制度や組織などを）改善する、改革する」という意味。"},
+        {"q": "make progress", "choices": ["進歩する", "準備する", "計画を立てる"], "a": "進歩する", "explanation": "progress（進歩）は不可算名詞として使われることが多く、通常は a や s を伴わない。"},
+        {"q": "aging society", "choices": ["高齢化社会", "多文化社会", "経済大国"], "a": "高齢化社会", "explanation": "aging（高齢化している）が society を修飾。"},
+        {"q": "fossil fuels", "choices": ["化石燃料", "代替エネルギー", "原子力"], "a": "化石燃料", "explanation": "fossil（化石）の fuel（燃料）。"},
+        {"q": "regenerative medicine", "choices": ["再生医療", "遺伝子治療", "がん治療"], "a": "再生医療", "explanation": "regenerative（再生の）と medicine（医療）の組み合わせ。"},
+        {"q": "a self-driving car", "choices": ["自動運転車", "スポーツカー", "電気自動車"], "a": "自動運転車", "explanation": "self-driving は「自動運転の」という意味。"},
+        {"q": "alternative energy", "choices": ["代替エネルギー", "伝統的な燃料", "核エネルギー"], "a": "代替エネルギー", "explanation": "alternative は「代替となる」という意味の形容詞。"},
+        {"q": "operate remotely", "choices": ["遠隔操作する", "手動で操作する", "設置する"], "a": "遠隔操作する", "explanation": "remotely（遠隔で）が動詞 operate（操作する）を修飾。"},
+        {"q": "expand human potential", "choices": ["人間の潜在能力を拡大する", "知識を共有する", "新しい価値を創造する"], "a": "人間の潜在能力を拡大する", "explanation": "potential は「潜在能力」を意味する。"},
+        {"q": "create new value", "choices": ["新しい価値を創造する", "利益を減らす", "規制を強化する"], "a": "新しい価値を創造する", "explanation": "create（創造する）と value（価値）の組み合わせ。"}
+    ],
+    "L11Grammar": [
+        {"q": "If I ( ) a tablet PC with me, I would look up the word online.", "choices": ["had", "have", "will have"], "a": "had", "explanation": "仮定法過去の構文。現在の事実と反対の仮定を表すため、動詞は過去形 had。主節は I would look up。"},
+        {"q": "If this technology ( ) been developed, things would be much more inconvenient now.", "choices": ["hadn't", "wasn't", "isn't"], "a": "hadn't", "explanation": "混合仮定法。If節は過去の事実に反する仮定（hadn't been developed）、主節は現在の事実に反する帰結（would be）。"},
+        {"q": "If I ( ) you, I would invite Chika to the party.", "choices": ["were", "am", "was"], "a": "were", "explanation": "仮定法過去の If I were you（もし私があなたなら）は定型表現。be動詞は通常 were を使用する。"},
+        {"q": "If I had used a PC to write my report, I ( ) have finished it sooner.", "choices": ["could", "can", "would"], "a": "could", "explanation": "仮定法過去完了の帰結節。could have 過去分詞で「〜できただろうに」という能力を表す。"},
+        {"q": "I ( ) we had the technology to stop global warming right now.", "choices": ["wish", "hope", "think"], "a": "wish", "explanation": "I wish + 仮定法過去（S + 過去形）で、「現在実現不可能な願望」を表す。"},
+        {"q": "It's time we ( ) to think globally and act locally.", "choices": ["started", "start", "will start"], "a": "started", "explanation": "It's time S + 過去形 で「もう〜する時間だ」という意味の仮定法表現。"},
+        {"q": "( ) the sun, no living thing could survive.", "choices": ["Without", "If", "Unless"], "a": "Without", "explanation": "Without A, B で「AがなければBだろう」という仮定法を導く前置詞句。If it were not for A と同義。"}
+    ],
+    "L11Comprehension": [
+        {
+            "text": "Currently, we use biometric identification to [A] our smartphones, among other uses. If this technology hadn't been developed, things would be much more [B] now. However, if only this [C] more widespread, we could use this technology for ID cards or even passports.",
+            "questions": [
+                {"context": "空欄Aに入る、生体認証の機能を示す動詞を選びなさい。", "q": "空欄 [A] に入る単語は？", "answer_key": "unlock", "choices": ["lock", "unlock", "sell"], "explanation": "生体認証はスマートフォンのロックを解除する（unlock）ために使われる。"},
+                {"context": "空欄Bに入る、混合仮定法に基づく適切な形容詞を選びなさい。", "q": "空欄 [B] に入る単語は？", "answer_key": "inconvenient", "choices": ["convenient", "easier", "inconvenient"], "explanation": "過去に開発されていなかったら、今はもっと不便（inconvenient）だろう、という混合仮定法の帰結。"},
+                {"context": "空欄Cに入る、If onlyの仮定法に基づく適切なbe動詞を選びなさい。", "q": "空欄 [C] に入る単語は？", "answer_key": "were", "choices": ["is", "was", "were"], "explanation": "If only S + 過去形 で強い願望を表す。be動詞は通常 were を使用する。"},
+                {"context": "文法重要事項: ( ) に下の語句を正しく並べ替えて「もし私があなたなら、彼の招待を受け入れるだろう」という仮定法過去の文を完成させなさい。", "q": "() his invitation. [I / you / were / I / would / if / accept]", "answer_key": "If I were you, I would accept", "choices": ["If I were you, I would accept", "I would accept if I were you", "I accept if I would were you", "I would were you accept if"], "explanation": "仮定法過去の基本形: If S + 過去形, S + would/could/might + 動詞の原形。正解: If I were you, I would accept"}
+            ]
+        },
+        {
+            "text": "Biometric identification is not easily [A], so new uses for this innovation would make our lives [B]. The presentation begins by asking the audience, 'What [C] you do if you had the ability to make one current innovation more popular?'",
+            "questions": [
+                {"context": "空欄Aに入る、生体認証の利点を示す動詞の受動態を選びなさい。", "q": "空欄 [A] に入る単語は？", "answer_key": "faked", "choices": ["ignored", "faked", "improved"], "explanation": "生体認証は簡単に偽造されない（not easily faked）という利点。"},
+                {"context": "空欄Bに入る、生体認証技術の普及によるメリットを示す適切な比較級を選びなさい。", "q": "空欄 [B] に入る単語は？", "answer_key": "safer", "choices": ["riskier", "cheaper", "safer"], "explanation": "偽造されにくいため、生活はより安全（safer）になる。"},
+                {"context": "空欄Cに入る、仮定法過去の疑問文を構成する適切な助動詞を選びなさい。", "q": "空欄 [C] に入る単語は？", "answer_key": "would", "choices": ["will", "do", "would"], "explanation": "仮定法過去の疑問文。What would you do if S + 過去形... となる。"},
+                {"context": "文法重要事項: ( ) に下の語句を正しく並べ替えて「今、雨が降っていなければ、私たちはピクニックに行けるのに」という仮定法過去の文を完成させなさい。", "q": "() to go on a picnic. [it / if / raining / weren't / we / could]", "answer_key": "If it weren't raining, we could", "choices": ["If it weren't raining, we could", "We could go on a picnic if it weren't", "If it could raining we weren't", "We weren't raining if it could"], "explanation": "仮定法過去。If節: be動詞は were/weren't を使う。主節: could go on a picnic。正解: If it weren't raining, we could go on a picnic."}
+            ]
+        },
+        {
+            "text": "If this technology hadn't been developed, things would be much more inconvenient [A]. If only this were more widespread, we could use this technology for ID cards or even [B]. The increasing popularity of this technology would certainly change the way we live and [C].",
+            "questions": [
+                {"context": "空欄Aに入る、現在の時点を示す副詞を選びなさい。", "q": "空欄 [A] に入る単語は？", "answer_key": "now", "choices": ["then", "soon", "now"], "explanation": "混合仮定法により、「今（now）は〜だろう」と現在の状況を述べる。"},
+                {"context": "空欄Bに入る、生体認証が利用可能な文書の例を選びなさい。", "q": "空欄 [B] に入る単語は？", "answer_key": "passports", "choices": ["letters", "passports", "magazines"], "explanation": "IDカードやパスポート（passports）など、本人確認が重要な文書への応用が考えられる。"},
+                {"context": "空欄Cに入る、生活の変化を示す適切な動詞を選びなさい。", "q": "空欄 [C] に入る単語は？", "answer_key": "work", "choices": ["eat", "work", "travel"], "explanation": "本文の文脈から、生活様式や仕事（work）のやり方が変わることを示唆している。"},
+                {"context": "文法重要事項: ( ) に下の語句を正しく並べ替えて「あのとき彼の助けがなければ、私たちは失敗していたでしょう」という仮定法過去完了の文を完成させなさい。", "q": "() then, we would have failed. [for / but / his / assistance]", "answer_key": "But for his assistance", "choices": ["But for his assistance", "His assistance but for", "for his assistance but", "assistance for his but"], "explanation": "仮定法を導く表現: But for A / Without A（Aがなければ）。主節は仮定法過去完了 (would have failed)。正解: But for his assistance"}
+            ]
+        }
+    ],
+    "L12Vocab": [
+        {"q": "inclusive", "choices": ["包括的な", "排他的な", "協力的な"], "a": "包括的な", "explanation": "include（含む）が語源。すべての人を受け入れる態度を示し、多様性の文脈で重要。"},
+        {"q": "universal design", "choices": ["ユニバーサルデザイン", "最新の技術", "古典的な様式"], "a": "ユニバーサルデザイン", "explanation": "年齢、能力、状況に関わらず誰もが使いやすいデザイン。"},
+        {"q": "human rights", "choices": ["人権", "市民の義務", "地域の慣習"], "a": "人権", "explanation": "human（人間の）の rights（権利）。"},
+        {"q": "coexist with", "choices": ["･･･と共存する", "･･･と協力する", "･･･を避ける"], "a": "･･･と共存する", "explanation": "co-（共に）と exist（存在する）の組み合わせ。"},
+        {"q": "respect others", "choices": ["他者を尊重する", "意見を押し付ける", "批判する"], "a": "他者を尊重する", "explanation": "respect は「（人や意見を）尊重する」という意味。"},
+        {"q": "abolish discrimination", "choices": ["差別をなくす", "意識を高める", "偏見を認める"], "a": "差別をなくす", "explanation": "abolish は「（制度や慣習を）廃止する、なくす」という意味の動詞。"},
+        {"q": "eliminate prejudice", "choices": ["偏見をなくす", "価値観を受け入れる", "多様性を否定する"], "a": "偏見をなくす", "explanation": "eliminate は「取り除く」。prejudice はネガティブな「偏見」を指す。"},
+        {"q": "check one's blind spot", "choices": ["盲点をチェックする", "視野を広げる", "経験を活かす"], "a": "盲点をチェックする", "explanation": "blind spot（盲点）とは、自分では気づきにくい欠点や思い込みのこと。"},
+        {"q": "promote mutual understanding", "choices": ["相互理解を深める", "意見を対立させる", "議論を避ける"], "a": "相互理解を深める", "explanation": "promote（促進する）と mutual（相互の）の組み合わせ。"},
+        {"q": "accommodate religious pluralism", "choices": ["宗教的多元主義を許容する", "単一の宗教を強制する", "信仰を否定する"], "a": "宗教的多元主義を許容する", "explanation": "accommodate は「〜を許容する」、pluralism は「多元論」の意。"}
+    ],
+    "L12Grammar": [
+        {"q": "I suggest that we ( ) diversity education.", "choices": ["promote", "promotes", "promoted"], "a": "promote", "explanation": "提案を表す suggest の後の that 節では、動詞は「should + 原形」または「原形」を使う。"},
+        {"q": "I propose that diversity ( ) embraced in the classroom.", "choices": ["be", "is", "will be"], "a": "be", "explanation": "要求・提案を表す propose の後の that 節。受動態の場合でも、動詞は be動詞の原形 be を使う。"},
+        {"q": "It is important that we ( ) other people's religious beliefs.", "choices": ["respect", "respects", "respected"], "a": "respect", "explanation": "重要性を表す important の後の that 節も、動詞は原形を使う。"},
+        {"q": "Having discussions among students from various backgrounds can ( ) to better mutual understanding.", "choices": ["lead", "leads", "leading"], "a": "lead", "explanation": "句動詞 lead to A で「Aにつながる」という意味。主語が動名詞句でも助動詞 can の後なので動詞は原形。"},
+        {"q": "It was ( ) recently that Japanese society started to pay attention to the word 'diversity.'", "choices": ["not until", "until", "before"], "a": "not until", "explanation": "It was not until A that B（Aになって初めてBした）という強調構文。"},
+        {"q": "It won't be long ( ) they know the truth.", "choices": ["before", "until", "after"], "a": "before", "explanation": "It won't be long before S V で「まもなくSがVするだろう」という決まった表現。"}
+    ],
+    "L12Comprehension": [
+        {
+            "text": "It was [A] recently that Japanese society started to pay attention to the word 'diversity.' Globalization has accelerated ethnic, religious, and [B] diversity. An African-American poet, Maya Angelou, once said that understanding cultural diversity begins [C] home.",
+            "questions": [
+                {"context": "空欄Aに入る、強調構文を構成する適切な語句を選びなさい。", "q": "空欄 [A] に入る単語は？", "answer_key": "not until", "choices": ["not until", "until", "before"], "explanation": "It was not until A that B（Aになって初めてBした）という強調構文。"},
+                {"context": "空欄Bに入る、グローバル化が加速させた多様性の種類を示しなさい。", "q": "空欄 [B] に入る単語は？", "answer_key": "social", "choices": ["social", "economic", "political"], "explanation": "本文より、民族的、宗教的、社会的（social）多様性を加速させている。"},
+                {"context": "空欄Cに入る、Maya Angelouの引用に基づく適切な前置詞を選びなさい。", "q": "空欄 [C] に入る単語は？", "answer_key": "at", "choices": ["at", "in", "from"], "explanation": "begins at home（家庭で始まる）という表現。"},
+                {"context": "文法重要事項: ( ) に下の語句を正しく並べ替えて「私たちはすぐにでも会議を始めるべきだ」という文を完成させなさい。", "q": "It is important that ( ) right away. [the / meeting / start]", "answer_key": "the meeting start", "choices": ["the meeting start", "start the meeting", "the start meeting", "meeting start the"], "explanation": "重要性のthat節: It is important that S + 動詞の原形 の形をとる。正解: the meeting start"}
+            ]
+        },
+        {
+            "text": "I suggest that we promote [A] education. I propose that diversity be [B] in the classroom, too. For example, having discussions among students from various backgrounds can [C] to better mutual understanding.",
+            "questions": [
+                {"context": "空欄Aに入る、発表者が推進すべきだと提案している教育の種類を選びなさい。", "q": "空欄 [A] に入る単語は？", "answer_key": "diversity", "choices": ["science", "diversity", "language"], "explanation": "発表者は多様性（diversity）教育の推進を提案している。"},
+                {"context": "空欄Bに入る、要求・提案のthat節のルールに基づく適切な動詞の形を選びなさい。", "q": "空欄 [B] に入る単語は？", "answer_key": "embraced", "choices": ["embraced", "embracing", "embraces"], "explanation": "「be embraced」で受け入れられる（受動態）という意味になる。I propose that S + (should) + 原形 の構文。"},
+                {"context": "空欄Cに入る、文脈に合った句動詞の一部を選びなさい。", "q": "空欄 [C] に入る単語は？", "answer_key": "lead", "choices": ["lead", "come", "bring"], "explanation": "lead to better mutual understanding（相互理解の向上につながる）という表現。"},
+                {"context": "並び替え問題: ( ) に下の語句を正しく並べ替えて「彼女は、そのプロジェクトはすぐに中止されるべきだと提案した」という文を完成させなさい。", "q": "She suggested that ( ) right away. [the / be / project / canceled]", "answer_key": "the project be canceled", "choices": ["the project be canceled", "be canceled the project", "canceled the project be", "project be canceled the"], "explanation": "提案のthat節: She suggested that S + 動詞の原形 の形をとる。受動態 be canceled が正解。正解: the project be canceled"}
+            ]
+        },
+        {
+            "text": "Maya Angelou's quotation is used to [A] the speaker's proposal for diversity education. Also, it won't be long [B] they understand the importance of being [C].",
+            "questions": [
+                {"context": "空欄Aに入る、著名人の引用を使う目的を示す動詞を選びなさい。", "q": "空欄 [A] に入る単語は？", "answer_key": "support", "choices": ["support", "question", "deny"], "explanation": "引用は、自分の提案を支持する（support）目的で使われる。"},
+                {"context": "空欄Bに入る、「まもなく〜するだろう」の構文を完成させる適切な語句を選びなさい。", "q": "空欄 [B] に入る単語は？", "answer_key": "before", "choices": ["until", "after", "before"], "explanation": "It won't be long before S V で「まもなくSがVするだろう」という表現。"},
+                {"context": "空欄Cに入る、多様性の文脈で重要な形容詞を選びなさい。", "q": "空欄 [C] に入る単語は？", "answer_key": "inclusive", "choices": ["exclusive", "inclusive", "passive"], "explanation": "多様性の文脈では、すべてを受け入れる包括的（inclusive）であることが重要。"},
+                {"context": "並び替え問題: ( ) に下の語句を正しく並べ替えて「まもなく彼らはその事実を知ることになるだろう」という文を完成させなさい。", "q": "It won't be long ( ) the truth. [they / before / know]", "answer_key": "before they know", "choices": ["before they know", "they know before", "know they before", "before know they"], "explanation": "時を表す表現: It won't be long before S V の形。正解: before they know"}
+            ]
+        }
+    ]
+}
